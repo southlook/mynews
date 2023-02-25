@@ -9,17 +9,18 @@ export default function Login(props) {
     const onFinish = (values) => {
         console.log(values)
         //roleState=true是用户状态开关 开才能登录
-        axios.get(`/users?username=${values.username}&password=${values.password}&roleState=true&_expand=role`).then(
-            res => {
-                console.log(res.data)
-                if (res.data.length === 0) {
-                    message.error("用户名或密码不正确")
-                } else {
-                    localStorage.setItem("token", JSON.stringify(res.data[0]))
-                    props.history.push("/")
+        axios.get(`/users?username=${values.username}&password=${values.password}&roleState=true&_expand=role`)
+            .then(
+                res => {
+                    console.log(res.data)
+                    if (res.data.length === 0) {
+                        message.error("用户名或密码不正确")
+                    } else {
+                        localStorage.setItem("token", JSON.stringify(res.data[0]))
+                        props.history.push("/")
+                    }
                 }
-            }
-        )
+            )
     }
     return (
         <div style={{ background: "rgb(35,39,65)", height: "100%", overflow: "hidden" }}>

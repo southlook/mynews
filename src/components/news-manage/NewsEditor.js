@@ -4,7 +4,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { Editor } from "react-draft-wysiwyg";
-import { convertToRaw, EditorState, ContentState } from 'draft-js';
+import { convertToRaw, EditorState, ContentState } from 'draft-js';  //富文本编辑器
 import draftToHtml from 'draftjs-to-html';//需要安装
 import htmlToDraft from 'html-to-draftjs';//反转
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
